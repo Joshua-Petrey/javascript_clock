@@ -25,9 +25,9 @@
         console.log('JSON file loaded')
       );
 
-      // make and update clock
+      // make the clock and update it using recursoin
 
-      setInterval(() => {
+      function makeAndUpdateClock() {
         let time = new Date();
         let hour = time.getHours();
 
@@ -49,7 +49,12 @@
 
         clock = document.querySelector('#clock');
         clock.innerHTML = hour + ':' + min + ':' + sec;
-      }, 1000);
+
+        // update the clock recursively
+        return setInterval(() => makeAndUpdateClock(), 1000);
+      }
+
+      makeAndUpdateClock();
     </script>
   </body>
 </html>

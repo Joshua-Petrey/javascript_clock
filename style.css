@@ -14,6 +14,12 @@ body {
   background-color: #121212;
   background-repeat: no-repeat;
   background-size: cover;
+  /* Make text unselectable */
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 canvas {
@@ -21,7 +27,7 @@ canvas {
 }
 
 #clock {
-  font: 120px 'Press Start 2P';
+  font: 120px 'Press Start 2P', cursive;
   color: #2ae03f;
 
   z-index: 10;

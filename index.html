@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
+    <title>Javascript Clock</title>
+  </head>
+  <body>
+    <div id="container">
+      <div id="clock"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+    <script>
+      // load particles
+      particlesJS.load('container', './particle-cfg.json', () =>
+        console.log('JSON file loaded')
+      );
+
+      // make and update clock
+
+      setInterval(() => {
+        let time = new Date();
+        let hour = time.getHours();
+
+        if (hour > 12) {
+          hour = time.getHours() - 12;
+        }
+
+        let min = time.getMinutes();
+
+        if (min < 10) {
+          min = '0' + time.getMinutes();
+        }
+
+        let sec = time.getSeconds();
+
+        if (sec < 10) {
+          sec = '0' + time.getSeconds();
+        }
+
+        clock = document.querySelector('#clock');
+        clock.innerHTML = hour + ':' + min + ':' + sec;
+      }, 1000);
+    </script>
+  </body>
+</html>

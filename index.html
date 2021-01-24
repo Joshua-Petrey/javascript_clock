@@ -52,7 +52,7 @@
         }
 
         clock = document.querySelector('#clock');
-        clock.innerHTML = `${hour}:${min}:${sec} ${meridiem}`;
+        clock.innerHTML = `${hour}:${min}:${sec}${meridiem}`;
 
         // update the clock recursively
         return setInterval(() => makeAndUpdateClock(), 1000);

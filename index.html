@@ -13,15 +13,17 @@
     <title>Javascript Clock</title>
   </head>
   <body>
-    <div id="container">
-      <div id="clock"></div>
+    <div id="page-container">
+      <div id="clock-container">
+        <div id="clock"></div>
+      </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <script>
       // load particles
-      particlesJS.load('container', './particle-cfg.json', () =>
+      particlesJS.load('page-container', './particle-cfg.json', () =>
         console.log('JSON file loaded')
       );
 

@@ -30,6 +30,10 @@
       function makeAndUpdateClock() {
         let time = new Date();
         let hour = time.getHours();
+        let meridiem = '';
+
+        // set meridiem to AM or PM
+        time.getHours() < 12 ? (meridiem = 'AM') : (meridiem = 'PM');
 
         if (hour > 12) {
           hour = time.getHours() - 12;
@@ -48,7 +52,7 @@
         }
 
         clock = document.querySelector('#clock');
-        clock.innerHTML = hour + ':' + min + ':' + sec;
+        clock.innerHTML = `${hour}:${min}:${sec} ${meridiem}`;
 
         // update the clock recursively
         return setInterval(() => makeAndUpdateClock(), 1000);
